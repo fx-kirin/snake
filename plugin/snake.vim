@@ -6,10 +6,10 @@ function! LoadSnake()
 
     let bootstrap=s:current_path . "/bootstrap.py"
 
-    if has("python")
-        exec "pyfile " . bootstrap
-    elseif has("python3")
+    if has("python3")
         exec "py3file " . bootstrap
+    elseif has("python")
+        exec "pyfile " . bootstrap
     else
         echo "No Python available!"
     endif
