@@ -431,7 +431,7 @@ def key_map(key, maybe_fn=None, mode=NORMAL_MODE, recursive=False,
 
     if callable(maybe_fn):
         fn = maybe_fn
-        fn_takes_selection = len(inspect.getargspec(fn).args)
+        fn_takes_selection = len(inspect.getfullargspec(fn).args)
 
         # if we're mapping in visual mode, we're going to assume that the
         # function takes the contents of the visual selection.  if the function

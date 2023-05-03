@@ -202,7 +202,7 @@ def in_virtualenv(venv_name):
 
 
 def import_source(name, path):
-    desc = (".py", "U", imp.PY_SOURCE)
+    desc = next(i for i in imp.get_suffixes() if i[2] == imp.PY_SOURCE)
     h = open(path, desc[1])
     module = imp.load_module(name, h, path, desc)
     return module
